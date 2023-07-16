@@ -127,3 +127,87 @@ vector<Person> GetMoscowPopulation() {
 }
  */
 
+// 4. Максимизатор
+/*
+void UpdateIfGreater(int a, int& b) {
+    if (a > b)
+        b = a;
+}
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+    UpdateIfGreater(a, b);
+    cout << "a = " << a << "\n";
+    cout << "b = " << b;
+    return 0;
+}
+ */
+
+// 5. Перемещение строк
+/*
+void MoveStrings(vector<string>& source, vector<string>& destination) {
+    for (const string& el : source)
+        destination.push_back(el);
+    source.clear();
+}
+
+int main() {
+    vector<string> source = {"a", "b", "c"};
+    vector<string> destination = {"z"};
+    MoveStrings(source, destination);
+    cout << "source: ";
+    for (const auto& s : source) {
+        cout << s << " ";
+    }
+    cout << "\n";
+    cout << "destination:\n";
+    for (const auto& d : destination)
+        cout << d << " ";
+}
+ */
+
+// 6. Разворот последовательности
+/*
+void Reverse(vector<int>& v) {
+    for (int i=0; i < v.size()/2; ++i) {
+        int tmp = v[v.size()-1-i];
+        v[v.size()-1-i] = v[i];
+        v[i] = tmp;
+    }
+}
+
+int main() {
+    vector<int> numbers = {1, 5, 3, 4, 2};
+    Reverse(numbers);
+    for (const auto& el :numbers) {
+        cout << el << " ";
+    }
+    return 0;
+}
+*/
+
+// 7. Разворот последовательности-2
+/*
+vector<int> Reversed(const vector<int>& v) {
+    vector<int> ans;
+    for (int i=0; i < v.size(); ++i) {
+        ans.push_back(v[v.size()-1-i]);
+    }
+    return ans;
+}
+
+int main() {
+    vector<int> nums = {1, 5, 3, 4, 2};
+    vector<int> rev_nums = Reversed(nums);
+    cout << "nums: ";
+    for (const auto& el : nums) {
+        cout << el << " ";
+    }
+    cout << "\nrev_nums: ";
+    for (const auto& el : rev_nums) {
+        cout << el << " ";
+    }
+    return 0;
+}
+ */

@@ -211,3 +211,33 @@ int main() {
     return 0;
 }
  */
+
+// 8. Средняя температура
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> t(n);
+    // вычисление среднего
+    int mean;
+    int s = 0;
+    for (int& temp : t) {
+        cin >> temp;
+        s += temp;
+    }
+    mean = s / n;
+    // поиск элементов, больших, чем среднее и иъ количества
+    int k = 0;
+    vector<int> greater_then_mean;
+    for (int i=0; i<t.size(); ++i) {
+        if (t[i] > mean) {
+            greater_then_mean.push_back(i);
+            ++k;
+        }
+    }
+    // вывод результатов
+    cout << k << "\n";
+    for (const auto& el : greater_then_mean)
+        cout << el << " ";
+    return 0;
+}

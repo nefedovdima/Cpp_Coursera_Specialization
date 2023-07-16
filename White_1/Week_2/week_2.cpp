@@ -275,3 +275,58 @@ int main() {
     return 0;
 }
  */
+
+// 10. Ежедневные дела
+
+void PrintVector(const vector<vector<string>>& v) {
+    for (int i=0; i<v.size(); ++i) {
+        cout << i << ": ";
+        for (const string& el : v[i]) {
+            cout << el << " ";
+        }
+        cout << "\n";
+    }
+}
+
+int main() {
+    vector<int> days_by_month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    vector<vector<string>> deals(31);
+    int current_month = 0;
+    int q;
+    cin >> q;
+    for (int j=0; j<q; ++j) {
+        string cmd;
+        cin >> cmd;
+        if (cmd == "ADD") {
+            int i;
+            cin >> i;
+            string s;
+            cin >> s;
+            deals[i-1].push_back(s);
+        }
+        else if (cmd == "DUMP") {
+            int i;
+            cin >> i;
+            for (const auto& deal : deals[i-1]) {
+                cout << deal << " ";
+            }
+            cout << "\n";
+        }
+        else if (cmd == "NEXT") {
+            int next_month = (current_month + 1) % 12;
+            if (days_by_month[next_month] < days_by_month[current_month]) {
+                for (auto day=days_by_month[next_month+1]-1;
+                        day < days_by_month[current_month]; ++day) {
+                    for (string& deal : deals[day]) {
+                        deals[days_by_month[next_month]-1].push_back(deal);
+                    }
+                }
+            }
+            deals.resize(days_by_month[next_month]);
+            current_month = next_month;
+        }
+        PrintVector(deals);
+    }
+
+    return 0;
+}

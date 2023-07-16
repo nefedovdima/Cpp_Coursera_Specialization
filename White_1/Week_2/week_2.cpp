@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <chrono>
+#include <algorithm>
 using namespace std;
 using namespace std::chrono;
 
@@ -213,7 +214,7 @@ int main() {
  */
 
 // 8. Средняя температура
-
+/*
 int main() {
     int n;
     cin >> n;
@@ -241,3 +242,36 @@ int main() {
         cout << el << " ";
     return 0;
 }
+ */
+
+// 9. Очередь
+/*
+int main() {
+    vector<bool> worry;
+    int q;
+    cin >> q;
+    for (int j=0; j<q; ++j) {
+        string cmd;
+        cin >> cmd;
+        if (cmd == "WORRY") {
+            int i;
+            cin >> i;
+            worry[i-1]=true;
+        }
+        else if (cmd == "QUIET") {
+            int i;
+            cin >> i;
+            worry[i-1]=false;
+        }
+        else if (cmd == "COME") {
+            int k;
+            cin >> k;
+            worry.resize(worry.size()+k, false);
+        }
+        else if (cmd == "WORRY_COUNT") {
+            cout << count(begin(worry), end(worry), true);
+        }
+    }
+    return 0;
+}
+ */

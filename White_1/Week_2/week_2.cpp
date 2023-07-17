@@ -3,6 +3,7 @@
 #include <vector>
 #include <chrono>
 #include <algorithm>
+#include <map>
 using namespace std;
 using namespace std::chrono;
 
@@ -277,7 +278,7 @@ int main() {
  */
 
 // 10. Ежедневные дела
-
+/*
 void PrintVector(const vector<vector<string>>& v) {
     for (int i=0; i<v.size(); ++i) {
         cout << i << ": ";
@@ -326,6 +327,209 @@ int main() {
             current_month = next_month;
         }
         PrintVector(deals);
+    }
+
+    return 0;
+}
+ */
+
+// 11. Анаграммы
+/*
+map<char, int> BuildCharCounters(const string& s) {
+    map<char, int> counters;
+    for (char ch : s) {
+        ++counters[ch];
+    }
+    return counters;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    for (int i=0; i<n; ++i) {
+        string first, second;
+        cin >> first >> second;
+        map<char, int> first_set = BuildCharCounters(first);
+        map<char, int> second_set = BuildCharCounters(second);
+        if (first_set == second_set)
+            cout << "YES" << "\n";
+        else
+            cout << "NO" << "\n";
+    }
+    return 0;
+}
+ */
+
+// 12.Справочик столиц
+
+/*
+void PrintMap(map<string, string> m) {
+    cout << "--------------------------------------\n";
+    for (const auto& [key, value] : m) {
+        cout << key << ": " << value << " \n";
+    }
+    cout << "--------------------------------------\n";
+}
+
+int main() {
+    map<string, string> capital_by_country;
+    int q;
+    cin >> q;
+    for (int i=0; i<q; ++i) {
+        string cmd;
+        cin >> cmd;
+        if (cmd == "CHANGE_CAPITAL") {
+            string country, new_capital;
+            cin >> country >> new_capital;
+            if (capital_by_country.count(country) == 0) {
+                capital_by_country[country] = new_capital;
+                cout << "Introduce new country " << country << " with capital " << new_capital << "\n";
+            }
+            else {
+                string old_capital = capital_by_country[country];
+                if (old_capital == new_capital)
+                    cout << "Country " << country << " hasn't changed its capital\n";
+                else {
+                    capital_by_country[country] = new_capital;
+                    cout << "Country " << country << " has changed its capital from "
+                    << old_capital << " to " << new_capital << "\n";
+                }
+            }
+        }
+        else if (cmd == "RENAME") {
+            string old_country_name, new_country_name;
+            cin >> old_country_name >> new_country_name;
+            if (capital_by_country.count(old_country_name) == 0 || capital_by_country.count(new_country_name) == 1) {
+                cout << "Incorrect rename, skip\n";
+            }
+            else {
+                string capital = capital_by_country[old_country_name];
+                capital_by_country.erase(old_country_name);
+                capital_by_country[new_country_name] = capital;
+                cout << "Country " << old_country_name << " with capital "
+                << capital << " has been renamed to " << new_country_name << "\n";
+            }
+        }
+        else if (cmd == "ABOUT") {
+            string country;
+            cin >> country;
+            if (capital_by_country.count(country) == 0)
+                cout << "Country "<< country << " doesn't exist\n";
+            else {
+                string capital = capital_by_country[country];
+                cout << "Country " << country << " has capital " << capital << "\n";
+            }
+        }
+        else if (cmd == "DUMP") {
+            if (capital_by_country.empty()) {
+                cout << "There are no countries in the world\n";
+            }
+            else {
+                for (const auto& [country, capital] : capital_by_country) {
+                    cout << country << ": " << capital << " ";
+                }
+                cout << "\n";
+            }
+        }
+        PrintMap(capital_by_country);
+    }
+    return 0;
+}
+ */
+
+
+// 13. Автобусные остановки
+
+void PrintMap(const map<string, vector<string>>& m) {
+    for (const auto& item : m) {
+        string key = item.first;
+        vector<string> values = item.second;
+        cout << key << ": ";
+        for (const auto& v : values) {
+            cout << v << " ";
+        }
+        cout << "\n";
+    }
+}
+
+int main() {
+    map<string, vector<string>> stops_by_bus;
+    map<string, vector<string>> buses_by_stop;
+    int q;
+    cin >> q;
+
+    for (int i=0; i<q; ++i) {
+        string cmd;
+        cin >> cmd;
+
+        if (cmd == "NEW_BUS") {
+            string bus;
+            cin >> bus;
+            int stop_count;
+            cin >> stop_count;
+            for (int j=0; j<stop_count; j++) {
+                string stop;
+                cin >> stop;
+                stops_by_bus[bus].push_back(stop);
+                buses_by_stop[stop].push_back(bus);
+            }
+        }
+        else if (cmd == "BUSES_FOR_STOP") {
+            string stop;
+            cin >> stop;
+            if (buses_by_stop.count(stop)==0) {
+                cout << "No stop\n";
+            }
+            else {
+                for (const auto& bus : buses_by_stop[stop]) {
+                    cout << bus << " ";
+                }
+                cout << "\n";
+            }
+        }
+        else if (cmd == "STOPS_FOR_BUS") {
+            string bus;
+            cin >> bus;
+            if (stops_by_bus.count(bus) == 0)
+                cout << "No bus\n";
+            else {
+                for (const auto& stop : stops_by_bus[bus]) {
+                    cout << "Stop " << stop << ": ";
+                    if (buses_by_stop[stop].size() == 1) {
+                        cout << "No interchange\n";
+                    }
+                    else {
+                        for (const auto& b : buses_by_stop[stop]) {
+                            if (b != bus)
+                                cout << b << " ";
+                        }
+                        cout << "\n";
+                    }
+                }
+            }
+        }
+        else if (cmd == "ALL_BUSES") {
+            if (stops_by_bus.empty())
+                cout << "No buses\n";
+            else {
+                for (const auto &item: stops_by_bus) {
+                    string bus = item.first;
+                    vector<string> stops = item.second;
+                    cout << "Bus " << bus << ": ";
+                    for (const string &stop: stops) {
+                        cout << stop << " ";
+                    }
+                    cout << "\n";
+                }
+            }
+        }
+        cout << "----------------------------------\n";
+        cout << "stops_by_bus:\n";
+        PrintMap(stops_by_bus);
+        cout << "----------------------------------\n";
+        cout << "buses_by_stop:\n";
+        PrintMap(buses_by_stop);
+        cout << "----------------------------------\n";
     }
 
     return 0;

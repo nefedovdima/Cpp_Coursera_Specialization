@@ -5,6 +5,7 @@
 #include <set>
 #include <map>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -153,9 +154,10 @@ int main() {
  */
 
 // Потоки ввода-вывода
+/*
 int main() {
-//    ifstream input("hello.txt");
-//    string line;
+    ifstream input("day.txt");
+    string line;
 //    getline(input, line);
 //    cout << line << "\n";
 //
@@ -173,15 +175,98 @@ int main() {
 //    }
 //    else
 //        cout << "write-time error";
-    ifstream input("day.txt");
     string year, month, day;
     if (input) {
         getline(input, year, '-');
         getline(input, month, '-');
         getline(input, day, '-');
-        cout << year;
+        cout << year << "." << month << "." << day;
     }
-    cout << "year: " << year << "month: " << month
-        << "day: " << day;
+    return 0;
+}
+*/
+
+// Операторы ввода-вывода и запись в конец файла
+/*
+int main() {
+    const string path = "output.txt";
+    ofstream output(path);
+    output << "hello";
+
+    ifstream input(path);
+    if (input) {
+        string line;
+        while (getline(input, line)) {
+            cout << line << "\n";
+        }
+    }
+    return 0;
+}
+ */
+
+// Чтение и вывод таблицы
+/*
+int main() {
+    ifstream input("sheets.txt");
+    int n=0, m=0;
+    input >> n >> m;
+    for (int i=0; i<n; ++i) {
+        for (int j=0; j<m; ++j) {
+            int x=0;
+            input >> x;
+            input.ignore(1);
+            cout << setw(10) << x;
+            if (j != m-1)
+                cout << " ";
+        }
+        if (i != n-1)
+            cout << "\n";
+    }
+
+
+    return 0;
+}
+ */
+
+// Список студентов
+
+struct Student {
+    string name;
+    string lastname;
+    int day;
+    int month;
+    int year;
+};
+
+int main() {
+    int n;
+    cin >> n;
+    vector<Student> students;
+    for (int i=0; i<n; ++i) {
+        string fisrt_name, last_name;
+        int d, m, y;
+        cin >> fisrt_name >> last_name
+            >> d >> m >> y;
+        students.push_back({fisrt_name, last_name, d, m, y});
+    }
+    int m;
+    cin >> m;
+    for (int j=0; j<m; ++j) {
+        string query;
+        int student_num;
+        cin >> query >> student_num;
+        --student_num;
+        if (query == "name" && student_num >= 0 && student_num < n) {
+            cout << students[student_num].name << " "
+                 << students[student_num].lastname << "\n";
+        }
+        else if (query == "date" && student_num >= 0 && student_num < n) {
+            cout << students[student_num].day << "."
+                 << students[student_num].month << "."
+                 << students[student_num].year << "\n";
+        }
+        else
+            cout << "bad request\n";
+    }
     return 0;
 }

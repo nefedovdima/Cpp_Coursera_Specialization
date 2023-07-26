@@ -229,7 +229,7 @@ int main() {
  */
 
 // Список студентов
-
+/*
 struct Student {
     string name;
     string lastname;
@@ -270,3 +270,201 @@ int main() {
     }
     return 0;
 }
+ */
+
+// Перегрузка операторов ввода и вывода
+
+
+struct Duration {
+    int hour;
+    int min;
+    explicit Duration(int h = 0, int m = 0) {
+        int total = h * 60 + m;
+        hour = total / 60;
+        min = total % 60;
+    }
+};
+// Реализация считывания и запись в поток через функции
+/*
+Duration ReadDuration(istream& stream) {
+    int h = 0;
+    int m = 0;
+    stream >> h;
+    stream.ignore(1);
+    stream >> m;
+    return Duration {h, m};
+}
+
+void PrintDuration(ostream& stream, const Duration& duration) {
+    stream << setfill('0');
+    stream << setw(2) << duration.hour << ":"
+           <<setw(2) << duration.min;
+}
+
+int main() {
+    stringstream dur_ss("01:50");
+    Duration dur1 = ReadDuration(dur_ss);
+    PrintDuration(cout, dur1);
+    return 0;
+}
+ */
+// Перегрузка операторов вывода из потока
+// и записи в поток
+
+ostream& operator<<(ostream& stream, const Duration& duration) {
+    stream << setfill('0');
+    stream << setw(2) << duration.hour << ":"
+           <<setw(2) << duration.min;
+    return stream;
+}
+
+istream& operator>>(istream& stream, Duration& duration) {
+    stream >> duration.hour;
+    stream.ignore(1);
+    stream >> duration.min;
+    return stream;
+}
+
+
+// Перегрузка операторов + и <
+/*
+Duration operator+(const Duration& lhs, const Duration rhs) {
+    return  Duration(lhs.hour + rhs.hour, lhs.min + rhs.min);
+}
+
+void PrintVector(const vector<Duration>& v) {
+    for (const auto& i : v) {
+        cout << i << " ";
+    }
+}
+
+bool operator<(const Duration& lhs, const Duration& rhs) {
+    if (lhs.hour == rhs.hour)
+        return lhs.min < rhs.min;
+    return lhs.hour < rhs.hour;
+}
+
+int main() {
+    stringstream dur_ss("01:50");
+    Duration dur1;
+    dur_ss >> dur1;
+    Duration dur2 = Duration(0, 35);
+    cout << dur1 + dur2 << "\n";
+    Duration dur3(dur1 + dur2);
+    vector<Duration> v {
+        dur3, dur2, dur1
+    };
+    PrintVector(v);
+    cout << "\n";
+    sort(begin(v), end(v));
+    PrintVector(v);
+    return 0;
+}
+ */
+
+
+#include <numeric>
+
+/*
+class Rational {
+public:
+    Rational() {
+        num = 0;
+        denom = 1;
+    }
+
+    Rational(int numerator, int denominator) {
+        int nob = GCD(numerator, denominator);
+        if (denominator > 0) {
+            nob;
+            num = numerator / nob;
+            denom = denominator / nob;
+        }
+        else {
+            nob;
+            num = - numerator / nob;
+            denom = - denominator / nob;
+        }
+    }
+
+    int Numerator() const {
+        return num;
+    }
+
+    int Denominator() const {
+        return denom;
+    }
+
+private:
+    int num;
+    int denom;
+    static int GCD(int a, int b) {
+        a = abs(a);
+        b = abs(b);
+        int tmp = 0;
+        while (b != 0) {
+            tmp = a;
+            a = b;
+            b = tmp % b;
+        }
+        return a;
+    }
+};
+
+int main() {
+
+    // Часть 1
+    {
+        const Rational r(3, 10);
+        if (r.Numerator() != 3 || r.Denominator() != 10) {
+            cout << "Rational(3, 10) != 3/10" << endl;
+            cout << r.Numerator() << "/" << r.Denominator();
+            return 1;
+        }
+    }
+
+    {
+        const Rational r(8, 12);
+        if (r.Numerator() != 2 || r.Denominator() != 3) {
+            cout << "Rational(8, 12) != 2/3" << endl;
+            return 2;
+        }
+    }
+
+    {
+        const Rational r(-4, 6);
+        if (r.Numerator() != -2 || r.Denominator() != 3) {
+            cout << "Rational(-4, 6) != -2/3" << endl;
+            return 3;
+        }
+    }
+
+    {
+        const Rational r(4, -6);
+        if (r.Numerator() != -2 || r.Denominator() != 3) {
+            cout << "Rational(4, -6) != -2/3" << endl;
+            cout << r.Numerator() << "/" << r.Denominator();
+            return 3;
+        }
+    }
+
+    {
+        const Rational r(0, 15);
+        if (r.Numerator() != 0 || r.Denominator() != 1) {
+            cout << "Rational(0, 15) != 0/1" << endl;
+            return 4;
+        }
+    }
+
+    {
+        const Rational defaultConstructed;
+        if (defaultConstructed.Numerator() != 0 || defaultConstructed.Denominator() != 1) {
+            cout << "Rational() != 0/1" << endl;
+            return 5;
+        }
+    }
+    // Часть 2
+    cout << "OK" << endl;
+    return 0;
+}
+ */

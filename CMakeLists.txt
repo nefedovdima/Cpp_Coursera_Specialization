@@ -19,4 +19,6 @@ add_executable(Cpp_Coursera_Specialization
         Yellow_2/Week_1/week_1.cpp
         .gitignore
         LICENSE
-        README.md)
+        README.md
+        Yellow_2/Week_1/all_in_sqr.cpp
+        Yellow_2/Week_1/get_ref_strict.cpp)

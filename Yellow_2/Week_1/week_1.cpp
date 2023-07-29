@@ -83,7 +83,7 @@ int main() {
 }
 */
 // Введение в шаблоны
-
+/*
 template <typename First, typename Second>
 pair<First, Second> operator*(const pair<First, Second>& lhs,
                               const pair<First, Second>& rhs) {
@@ -158,3 +158,4 @@ int main() {
     cout << "Max from 2 and 5.5: "<< max<float>(2, 5.5) << "\n";
     return 0;
 }
+*/

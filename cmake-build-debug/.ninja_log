@@ -1,12 +1,18 @@
 # ninja log v5
+103	1211	7123293819332802	CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_5/final.cpp.obj	add8b144b0a49785
 33	304	7123293809859550	CMakeFiles/Cpp_Coursera_Specialization.dir/.metadata/.plugins/org.eclipse.cdt.make.core/specs.cpp.obj	84f545e657127a1e
 64	1287	7123293820056765	CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_2/week_2.cpp.obj	499d93650c16e6b6
-103	1211	7123293819332802	CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_5/final.cpp.obj	add8b144b0a49785
 11	367	7123269336333014	CMakeFiles/Cpp_Coursera_Specialization.dir/.metadata/.plugins/org.eclipse.cdt.make.core/specs.c.obj	dc5c88f56a10931c
-50	887	7123293816061214	CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_1/main.cpp.obj	c7e00202162c88ff
 305	1424	7123293821451975	CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/max_repetition.cpp.obj	c6bcbdb6d029f0ac
+50	887	7123293816061214	CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_1/main.cpp.obj	c7e00202162c88ff
 85	1274	7123293819946735	CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_3/week_3.cpp.obj	636f4a0c24d00e63
 5	1172	7123293818857532	CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_4/week_4.cpp.obj	66c54aa7f24ca416
 5	869	7123352167607749	CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/week_1.cpp.obj	41f07285fe5e5eb3
 1094	1282	7123359165855070	Cpp_Coursera_Specialization.exe	ea9fef3da2c05faa
 4	1093	7123359164026036	CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/all_in_sqr.cpp.obj	2c072f93ab806540
+1	261	7123377586575052	build.ninja	42f19222f0b320dc
+5	754	7123377595094665	CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/max_repetition.cpp.obj	c6bcbdb6d029f0ac
+13	980	7123377597324835	CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/all_in_sqr.cpp.obj	2c072f93ab806540
+31	985	7123377597374795	CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/week_1.cpp.obj	41f07285fe5e5eb3
+22	1205	7123377599536942	CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/get_ref_strict.cpp.obj	a949154b118ca50d
+1205	1455	7123377602022312	Cpp_Coursera_Specialization.exe	c2069ee78440cea

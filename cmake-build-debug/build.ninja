@@ -133,6 +133,13 @@ build CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_2/synonyms.cpp.ob
   OBJECT_DIR = CMakeFiles\Cpp_Coursera_Specialization.dir
   OBJECT_FILE_DIR = CMakeFiles\Cpp_Coursera_Specialization.dir\Yellow_2\Week_2
 
+build CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_2/sum_unit_test.cpp.obj: CXX_COMPILER__Cpp_Coursera_Specialization_Debug D$:/CPP/Cpp_Coursera_Specialization/Yellow_2/Week_2/sum_unit_test.cpp || cmake_object_order_depends_target_Cpp_Coursera_Specialization
+  DEP_FILE = CMakeFiles\Cpp_Coursera_Specialization.dir\Yellow_2\Week_2\sum_unit_test.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -ID:/CPP/Cpp_Coursera_Specialization/. -ID:/CPP/Cpp_Coursera_Specialization/White_1 -ID:/CPP/Cpp_Coursera_Specialization/Yellow_2
+  OBJECT_DIR = CMakeFiles\Cpp_Coursera_Specialization.dir
+  OBJECT_FILE_DIR = CMakeFiles\Cpp_Coursera_Specialization.dir\Yellow_2\Week_2
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Cpp_Coursera_Specialization
@@ -141,7 +148,7 @@ build CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_2/synonyms.cpp.ob
 #############################################
 # Link the executable Cpp_Coursera_Specialization.exe
 
-build Cpp_Coursera_Specialization.exe: CXX_EXECUTABLE_LINKER__Cpp_Coursera_Specialization_Debug CMakeFiles/Cpp_Coursera_Specialization.dir/.metadata/.plugins/org.eclipse.cdt.make.core/specs.c.obj CMakeFiles/Cpp_Coursera_Specialization.dir/.metadata/.plugins/org.eclipse.cdt.make.core/specs.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_1/main.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_2/week_2.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_3/week_3.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_4/week_4.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_5/final.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/max_repetition.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/week_1.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/all_in_sqr.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/get_ref_strict.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_2/synonyms.cpp.obj
+build Cpp_Coursera_Specialization.exe: CXX_EXECUTABLE_LINKER__Cpp_Coursera_Specialization_Debug CMakeFiles/Cpp_Coursera_Specialization.dir/.metadata/.plugins/org.eclipse.cdt.make.core/specs.c.obj CMakeFiles/Cpp_Coursera_Specialization.dir/.metadata/.plugins/org.eclipse.cdt.make.core/specs.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_1/main.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_2/week_2.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_3/week_3.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_4/week_4.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/White_1/Week_5/final.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/max_repetition.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/week_1.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/all_in_sqr.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_1/get_ref_strict.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_2/synonyms.cpp.obj CMakeFiles/Cpp_Coursera_Specialization.dir/Yellow_2/Week_2/sum_unit_test.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Cpp_Coursera_Specialization.dir

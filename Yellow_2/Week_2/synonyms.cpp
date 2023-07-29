@@ -8,7 +8,7 @@
 #include <set>
 using namespace std;
 
-
+/*
 void AddSynonyms(map<string, set<string>>& synonyms,
                  const string& first_word,
                  const string& second_word) {
@@ -55,3 +55,5 @@ int main() {
     }
     return  0;
 }
+
+ */

@@ -21,4 +21,4 @@ add_executable(Cpp_Coursera_Specialization
         LICENSE
         README.md
         Yellow_2/Week_1/all_in_sqr.cpp
-        Yellow_2/Week_1/get_ref_strict.cpp Yellow_2/Week_2/synonyms.cpp)
+        Yellow_2/Week_1/get_ref_strict.cpp Yellow_2/Week_2/synonyms.cpp Yellow_2/Week_2/sum_unit_test.cpp)

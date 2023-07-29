@@ -6,7 +6,7 @@
 #include <sstream>
 #include <algorithm>
 using namespace std;
-
+/*
 template <typename Key, typename Value>
 Value& GetRefStrict(map<Key, Value>& m, const Key& key) {
     if (m.count(key) == 0) {
@@ -23,3 +23,4 @@ int main() {
     cout << m[0] << endl;
     return 0;
 }
+ */

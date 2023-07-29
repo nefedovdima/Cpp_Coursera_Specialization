@@ -126,7 +126,8 @@
 				7,
 				8,
 				12,
-				13
+				13,
+				14
 			]
 		}
 	],
@@ -173,7 +174,8 @@
 				7,
 				8,
 				12,
-				13
+				13,
+				14
 			]
 		},
 		{
@@ -267,6 +269,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
 			"path" : "Yellow_2/Week_1/get_ref_strict.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "Yellow_2/Week_2/synonyms.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

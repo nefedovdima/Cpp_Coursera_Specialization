@@ -9,7 +9,7 @@
 #include <set>
 #include <cassert>
 using namespace std;
-
+/*
 template <typename T>
 T Sum(const T& x, const T& y) {
     return x + y;
@@ -28,3 +28,4 @@ int main() {
     TestSum();
     return 0;
 }
+ */

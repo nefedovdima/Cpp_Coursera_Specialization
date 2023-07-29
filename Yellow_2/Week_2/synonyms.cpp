@@ -6,31 +6,63 @@
 #include <sstream>
 #include <algorithm>
 #include <set>
+#include <cassert>
 using namespace std;
 
-/*
-void AddSynonyms(map<string, set<string>>& synonyms,
+using Synonyms = map<string, set<string>>;
+
+void AddSynonyms(Synonyms& synonyms,
                  const string& first_word,
                  const string& second_word) {
     synonyms[second_word].insert(first_word);
     synonyms[first_word].insert(second_word);
 }
 
-size_t GetSynonymsCount(map<string, set<string>>& synonyms, const string& word) {
+size_t GetSynonymsCount(Synonyms& synonyms, const string& word) {
     return synonyms[word].size();
 }
 
-bool AreSynonyms(map<string, set<string>>& synonyms,
+bool AreSynonyms(Synonyms& synonyms,
                      const string& first_word,
                      const string& second_word) {
     return synonyms[first_word].count(second_word) == 1;
 }
 
-int main() {
+
+void TestAddSynonyms() {
+    {
+        // Добавление пары синонимов в пустой словарь
+        Synonyms empty;
+        AddSynonyms(empty, "a", "b");
+        const Synonyms expected = {
+                {"a", {"b"}},
+                {"b", {"a"}}
+        };
+        assert(empty == expected);
+    }
+    {
+        Synonyms synonyms = {
+                {"a", {"b"}},
+                {"b", {"a", "c"}},
+                {"c", {"b"}}
+        };
+        AddSynonyms(synonyms, "a", "c");
+        Synonyms expected = {
+                {"a", {"b", "c"}},
+                {"b", {"a", "c"}},
+                {"c", {"b", "a"}}
+        };
+        assert(synonyms == expected);
+    }
+    cout << "AddSynonyms OK";
+}
+
+
+void prime() {
     int q;
     cin >> q;
 
-    map<string, set<string>> synonyms;
+    Synonyms synonyms;
 
     for (int i=0; i<q; ++i) {
         string operation_code;
@@ -53,7 +85,11 @@ int main() {
                 cout << "NO" << "\n";
         }
     }
-    return  0;
 }
 
- */
+
+int main() {
+    TestAddSynonyms();
+    return  0;
+    prime();
+}

@@ -1,0 +1,6 @@
+# ninja log v5
+9	829	7124208328144187	CMakeFiles/sum_reverse_sort.dir/main.cpp.obj	97bf953d05fc5a2b
+0	1071	7124208330519546	CMakeFiles/sum_reverse_sort.dir/sum_reverse_sort.cpp.obj	3b3b463f8183a52a
+1072	1312	7124208332895179	sum_reverse_sort.exe	cde3ae35bb3022d7
+4	882	7124210042349271	CMakeFiles/sum_reverse_sort.dir/sum_reverse_sort.cpp.obj	3b3b463f8183a52a
+883	1071	7124210044199720	sum_reverse_sort.exe	cde3ae35bb3022d7

@@ -1,0 +1,10 @@
+# ninja log v5
+1	645	7124234111282269	CMakeFiles/phone_number.dir/main.cpp.obj	107b09eb9bcae95c
+72	4324	7124234306128592	CMakeFiles/phone_number.dir/phone_number.cpp.obj	54ea147b2459119b
+4325	4502	7124234307854117	phone_number.exe	8d2f8ceecedb14a9
+4	787	7124237526709486	CMakeFiles/phone_number.dir/phone_number.cpp.obj	54ea147b2459119b
+787	983	7124237528606229	phone_number.exe	8d2f8ceecedb14a9
+4	716	7124241505361114	CMakeFiles/phone_number.dir/phone_number.cpp.obj	54ea147b2459119b
+716	886	7124241507035924	phone_number.exe	8d2f8ceecedb14a9
+4	611	7124242156413624	CMakeFiles/phone_number.dir/phone_number.cpp.obj	54ea147b2459119b
+612	768	7124242157928801	phone_number.exe	8d2f8ceecedb14a9

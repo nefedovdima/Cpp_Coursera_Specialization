@@ -1,0 +1,3 @@
+D:/CPP/Cpp_Coursera_Specialization/Yellow_2/Week_4/cmake-build-debug/CMakeFiles/Week_4.dir
+D:/CPP/Cpp_Coursera_Specialization/Yellow_2/Week_4/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/CPP/Cpp_Coursera_Specialization/Yellow_2/Week_4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
